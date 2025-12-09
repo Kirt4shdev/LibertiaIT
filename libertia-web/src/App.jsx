@@ -1,39 +1,18 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Problems from './components/Problems';
-import Services from './components/Services';
-import Reasons from './components/Reasons';
-import Testimonials from './components/Testimonials';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import LightOrbs from './components/LightOrbs';
+import HomePage from './pages/HomePage';
+import BlogPage from './pages/BlogPage';
 
 function App() {
   return (
-    <ThemeProvider>
-      <div style={{ position: 'relative', minHeight: '100vh' }}>
-        {/* Light Orbs - animated background lights */}
-        <LightOrbs />
-        
-        {/* Noise Texture - top layer for texture */}
-        <div className="noise" />
-        
-        {/* Main Content */}
-        <div style={{ position: 'relative', zIndex: 10 }}>
-          <Navbar />
-          <main>
-            <Hero />
-            <Problems />
-            <Services />
-            <Reasons />
-            <Testimonials />
-            <Contact />
-          </main>
-          <Footer />
-        </div>
-      </div>
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/blog" element={<BlogPage />} />
+        </Routes>
+      </ThemeProvider>
+    </BrowserRouter>
   );
 }
 

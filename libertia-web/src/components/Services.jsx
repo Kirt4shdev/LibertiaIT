@@ -234,8 +234,9 @@ export default function Services() {
 
                       <motion.a
                         href="#contact"
-                        whileHover={{ scale: 1.02 }}
+                        whileHover={{ scale: 1.05, y: -2 }}
                         whileTap={{ scale: 0.98 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 17 }}
                         className="btn-primary"
                         style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
                       >

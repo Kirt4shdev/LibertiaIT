@@ -119,8 +119,9 @@ export default function Hero() {
         >
           <motion.a
             href="#contact"
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
             className="btn-primary"
             style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
           >
@@ -129,8 +130,9 @@ export default function Hero() {
           </motion.a>
           <motion.a
             href="#services"
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
             className="btn-secondary"
           >
             Ver servicios

@@ -114,35 +114,40 @@ export const siteContent = {
       role: "Director General",
       company: "Julián de Castro - Avanza",
       quote: "Llevamos más de 10 años trabajando con Libertia IT. Cuando empezamos, dependíamos de una sola persona y sufríamos cortes frecuentes en la red. Hoy contamos con un entorno estable, seguro y con visibilidad total.",
-      image: null
+      image: "/images/testimonials/testimonials_c2bfd94748fb.webp",
+      logo: "/images/clients/clients_5cfa1d6a9bdb.webp"
     },
     {
       name: "Pablo Font",
       role: "Socio",
       company: "BUSQUETS",
       quote: "Ahora sentimos que no estamos solos en la parte tecnológica. Libertia IT nos acompaña, nos orienta y nos hace ver cómo la tecnología puede impulsar el crecimiento del despacho.",
-      image: null
+      image: null,
+      logo: "/images/clients/clients_75563dbfb54b.webp"
     },
     {
       name: "Guimar Moro García",
       role: "Directora Ejecutiva",
       company: "CONCAES",
       quote: "Con Libertia IT dimos el paso que necesitábamos: dejamos atrás la incertidumbre y ganamos control. Hoy trabajamos con un sistema moderno, un CRM que nos impulsa y una infraestructura estable.",
-      image: null
+      image: null,
+      logo: "/images/clients/clients_0501e8ee6d17.webp"
     },
     {
       name: "Miguel Carrasco",
       role: "Director de Innovación",
       company: "DILUS",
       quote: "Antes todo dependía de una sola persona. Ahora todo está documentado, monitorizado y bajo control. Sentimos que tenemos un departamento completo de IT.",
-      image: null
+      image: null,
+      logo: "/images/clients/clients_f53eebaf0fb1.webp"
     },
     {
       name: "Vicente Zalve",
       role: "Director General",
       company: "NextMune",
       quote: "Veinte años de colaboración dicen mucho. Libertia IT nos ayudó a profesionalizar la gestión tecnológica, eliminar deuda técnica y dar estabilidad a nuestra operación.",
-      image: null
+      image: null,
+      logo: "/images/certifications/certifications_46d74fbaffda.webp"
     }
   ],
 
@@ -204,10 +209,137 @@ export const siteContent = {
   }
 };
 
+// Información de "Sobre Nosotros"
+export const aboutUs = {
+  title: "Libertia IT: un proyecto que nació para marcar la diferencia",
+  subtitle: "Más que un proveedor, somos un partner que te escucha, te entiende y convierte la tecnología en resultados",
+  history: [
+    {
+      year: "2004",
+      title: "Nuestros inicios",
+      description: "Libertia IT nació de la necesidad de dar soluciones reales a un negocio familiar. Empezamos solo dos personas: Luis y Alicia. Por aquel entonces éramos formadores en productos Microsoft, Linux y Cisco."
+    },
+    {
+      year: "2010",
+      title: "Pioneros en servicios gestionados",
+      description: "Investigamos fuera de España hasta descubrir un nuevo enfoque que estaba revolucionando la gestión tecnológica en EEUU: el modelo de servicios gestionados (MSP). Nos formamos y dimos el paso que aún hoy, pocos se han atrevido a dar."
+    },
+    {
+      year: "2024",
+      title: "Más de dos décadas después",
+      description: "Con un equipo en constante crecimiento, seguimos fieles a la misma idea: Ayudar a las empresas a proteger, simplificar y escalar su tecnología con una gestión alineada a sus objetivos y a su tranquilidad."
+    }
+  ],
+  mission: "No somos el proveedor que soluciona tus problemas, sino el socio que evita que los tengas.",
+  values: [
+    { icon: "Shield", title: "Seguridad", description: "Nuestro core es la seguridad y el liderazgo IT estratégico" },
+    { icon: "Target", title: "Enfoque", description: "Ponemos foco en las necesidades tecnológicas de tu negocio" },
+    { icon: "Heart", title: "Compromiso", description: "Te escuchamos y nos implicamos para ayudarte a conseguir tus objetivos" }
+  ],
+  team: [
+    { name: "Luis Morcillo", role: "CEO & Founder", description: "Emprendedor enamorado del mundo de la tecnología. Formador de los certificados MCSE de Microsoft.", image: "/images/team_real/luis_morcillo.jpg" },
+    { name: "Alicia Díaz", role: "Dirección Administrativa y Calidad", description: "Cofundadora y responsable de la gestión administrativa y estándares de calidad.", image: "/images/team_real/alicia_diaz.jpg" },
+    { name: "Álvaro Sepúlveda", role: "Gestión de Proyectos, Seguridad y Redes", description: "Especialista en la gestión integral de proyectos tecnológicos.", image: "/images/team_real/alvaro_sepulveda.jpg" },
+    { name: "Julia Ruiz", role: "Gestión y Administración", description: "Responsable de gestión administrativa y coordinación.", image: "/images/team_real/julia_ruiz.jpg" },
+    { name: "Daniel González", role: "Coordinador Soporte y Sistemas", description: "Líder del equipo de soporte técnico.", image: "/images/team_real/daniel_gonzalez.webp" },
+    { name: "Carlos Larrarte", role: "Ciberseguridad y Sistemas", description: "Experto en implementación de soluciones de seguridad.", image: "/images/team_real/carlos_larrarte.webp" },
+    { name: "Máximo Danylyuk", role: "Sistemas y Redes", description: "Especialista en infraestructura de redes.", image: "/images/team_real/maximo_danylyuk.webp" },
+    { name: "Ángel Valiente", role: "Soporte y Sistemas", description: "Técnico de soporte especializado.", image: "/images/team_real/angel_valiente.webp" },
+    { name: "Alberto Serrano", role: "Ciberseguridad y SOC", description: "Analista del Centro de Operaciones de Seguridad.", image: "/images/team_real/alberto_serrano.webp" },
+    { name: "Iñigo Bolado", role: "Soporte y Sistemas", description: "Técnico de soporte y administración de sistemas.", image: "/images/team_real/inigo_bolado.webp" }
+  ]
+};
+
+// Artículos del Blog
+export const blogPosts = [
+  {
+    id: 1,
+    title: "Estafas por Redes Sociales: Guía Completa de Protección 2025",
+    excerpt: "Las estafas por redes sociales se han convertido en una de las principales amenazas cibernéticas. Aprende a identificar y evitar los fraudes más comunes.",
+    category: "Ciberseguridad",
+    date: "2025-01-15",
+    readTime: "12 min",
+    url: "https://libertia.es/estafas-por-redes-sociales-2025"
+  },
+  {
+    id: 2,
+    title: "Ciberseguridad en la Industria 4.0",
+    excerpt: "Descubre cómo proteger tu empresa en la era de la Industria 4.0 y las principales amenazas a las que te enfrentas.",
+    category: "Industria",
+    date: "2025-01-10",
+    readTime: "10 min",
+    url: "https://libertia.es/ciberseguridad-en-la-industria-4-0"
+  },
+  {
+    id: 3,
+    title: "Ciberseguridad en el Sector de Hostelería en Madrid",
+    excerpt: "El 60% de los restaurantes y hoteles en España han sufrido al menos un ciberataque. Protege tu negocio de hostelería.",
+    category: "Hostelería",
+    date: "2025-01-05",
+    readTime: "15 min",
+    url: "https://libertia.es/ciberseguridad-en-el-sector-de-hosteleria"
+  },
+  {
+    id: 4,
+    title: "Tendencias Emergentes en Ciberseguridad 2025",
+    excerpt: "Descubre las últimas tendencias en ciberseguridad que marcarán el rumbo de la protección digital empresarial.",
+    category: "Tendencias",
+    date: "2024-12-28",
+    readTime: "8 min",
+    url: "https://libertia.es/tendencias-emergentes-en-ciberseguridad-2025"
+  },
+  {
+    id: 5,
+    title: "Estadísticas de Ciberataques en Madrid 2025",
+    excerpt: "Análisis completo de los ciberataques más frecuentes en empresas madrileñas y cómo prevenirlos.",
+    category: "Estadísticas",
+    date: "2024-12-20",
+    readTime: "10 min",
+    url: "https://libertia.es/estadisticas-de-ciberataques-en-madrid-2025"
+  },
+  {
+    id: 6,
+    title: "Qué es un MSP y por qué tu empresa lo necesita",
+    excerpt: "Descubre qué es un proveedor de servicios gestionados y cómo puede transformar la gestión tecnológica de tu empresa.",
+    category: "Servicios",
+    date: "2024-12-15",
+    readTime: "7 min",
+    url: "https://libertia.es/que-es-un-msp"
+  },
+  {
+    id: 7,
+    title: "10 Errores Comunes en Seguridad Informática",
+    excerpt: "Los errores más frecuentes que cometen las empresas en ciberseguridad y cómo evitarlos.",
+    category: "Consejos",
+    date: "2024-12-10",
+    readTime: "9 min",
+    url: "https://libertia.es/10-errores-comunes-en-seguridad-informatica"
+  },
+  {
+    id: 8,
+    title: "Esquema Nacional de Seguridad (ENS)",
+    excerpt: "Todo lo que necesitas saber sobre el ENS y cómo conseguir la certificación para tu empresa.",
+    category: "Cumplimiento",
+    date: "2024-12-05",
+    readTime: "11 min",
+    url: "https://libertia.es/esquema-nacional-de-seguridad"
+  },
+  {
+    id: 9,
+    title: "Autenticación Multifactor (MFA): Guía Completa",
+    excerpt: "Implementa MFA en tu empresa y protege tus sistemas contra accesos no autorizados.",
+    category: "Seguridad",
+    date: "2024-11-28",
+    readTime: "8 min",
+    url: "https://libertia.es/ciberseguridad-autenticacion-multifactor-mfa"
+  }
+];
+
 export const navigation = [
   { name: 'Inicio', href: '#hero' },
   { name: 'Servicios', href: '#services' },
-  { name: 'Por qué elegirnos', href: '#reasons' },
+  { name: 'Nosotros', href: '#about' },
+  { name: 'Blog', href: '/blog', isRoute: true },
   { name: 'Testimonios', href: '#testimonials' },
   { name: 'Contacto', href: '#contact' }
 ];

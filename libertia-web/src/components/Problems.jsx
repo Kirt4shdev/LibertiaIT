@@ -90,14 +90,13 @@ export default function Problems() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ scale: 1.02, y: -5 }}
+                className="card-hover"
                 style={{
                   position: 'relative',
                   padding: '1.5rem',
                   borderRadius: '1rem',
                   background: 'var(--bg-secondary)',
-                  border: '1px solid var(--border-color)',
-                  transition: 'all 0.3s ease'
+                  border: '1px solid var(--border-color)'
                 }}
               >
                 <div style={{ position: 'relative', zIndex: 10 }}>
@@ -153,8 +152,9 @@ export default function Problems() {
           </p>
           <motion.a
             href="#services"
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.05, y: -3 }}
             whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
             style={{
               display: 'inline-flex',
               alignItems: 'center',

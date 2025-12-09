@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone, Moon, Sun, Sparkles, ArrowRight } from 'lucide-react';
 import { useTheme, themes } from '../context/ThemeContext';
@@ -99,58 +100,64 @@ export default function Navbar() {
             height: '4.5rem'
           }}>
             {/* Logo */}
-            <motion.a 
-              href="#"
+            <Link 
+              to="/"
+              className="navbar-logo"
               style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none', zIndex: 101 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
             >
-              <div style={{
-                width: '2.5rem',
-                height: '2.5rem',
-                background: 'linear-gradient(135deg, #22d3ee, #2563eb)',
-                borderRadius: '0.75rem',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}>
-                <span style={{ color: 'white', fontWeight: 700, fontSize: '1.25rem' }}>L</span>
-              </div>
-              <span className="logo-text" style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-primary)' }}>
-                Libertia<span style={{ color: '#22d3ee' }}>IT</span>
-              </span>
-            </motion.a>
+              <img 
+                src="/libertia_it_logo_fondos_claros-2.webp" 
+                alt="Libertia IT" 
+                style={{
+                  height: '2.5rem',
+                  width: 'auto',
+                  objectFit: 'contain'
+                }}
+              />
+            </Link>
 
             {/* Desktop Navigation */}
             <div className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
-              {navigation.map((item, index) => (
-                <motion.a
-                  key={item.name}
-                  href={item.href}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ color: '#22d3ee' }}
-                  style={{
-                    position: 'relative',
-                    padding: '0.5rem 1rem',
-                    color: 'var(--text-secondary)',
-                    textDecoration: 'none',
-                    fontSize: '0.9rem',
-                    transition: 'color 0.3s ease'
-                  }}
-                >
-                  {item.name}
-                </motion.a>
+              {navigation.map((item) => (
+                item.isRoute ? (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className="navbar-link"
+                    style={{
+                      position: 'relative',
+                      padding: '0.5rem 1rem',
+                      color: 'var(--text-secondary)',
+                      textDecoration: 'none',
+                      fontSize: '0.9rem'
+                    }}
+                  >
+                    {item.name}
+                  </Link>
+                ) : (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="navbar-link"
+                    style={{
+                      position: 'relative',
+                      padding: '0.5rem 1rem',
+                      color: 'var(--text-secondary)',
+                      textDecoration: 'none',
+                      fontSize: '0.9rem'
+                    }}
+                  >
+                    {item.name}
+                  </a>
+                )
               ))}
             </div>
 
             {/* Desktop Actions */}
             <div className="desktop-actions" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-              <motion.button
+              <button
                 onClick={cycleTheme}
-                whileHover={{ scale: 1.1, rotate: 15 }}
-                whileTap={{ scale: 0.9 }}
+                className="navbar-icon-btn"
                 style={{
                   padding: '0.5rem',
                   borderRadius: '0.75rem',
@@ -165,13 +172,11 @@ export default function Navbar() {
                 title={`Tema: ${themes[theme].name}`}
               >
                 {getThemeIcon()}
-              </motion.button>
+              </button>
 
-              <motion.a
+              <a
                 href={`tel:+34${siteContent.company.phone.replace(/\s/g, '')}`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="phone-link"
+                className="phone-link navbar-btn"
                 style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -187,17 +192,15 @@ export default function Navbar() {
               >
                 <Phone style={{ width: '1rem', height: '1rem' }} />
                 <span style={{ fontWeight: 500 }}>{siteContent.company.phone}</span>
-              </motion.a>
+              </a>
 
-              <motion.a
+              <a
                 href="#contact"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-primary"
+                className="btn-primary navbar-cta"
                 style={{ padding: '0.625rem 1.25rem', fontSize: '0.9rem' }}
               >
                 Contactar
-              </motion.a>
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -287,38 +290,63 @@ export default function Navbar() {
               maxWidth: '400px'
             }}>
               {navigation.map((item, index) => (
-                <motion.a
-                  key={item.name}
-                  href={item.href}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 20 }}
-                  transition={{ delay: index * 0.08, duration: 0.3 }}
-                  onClick={() => setIsOpen(false)}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    width: '100%',
-                    padding: '1.25rem 2rem',
-                    fontSize: '1.5rem',
-                    fontWeight: 600,
-                    color: 'var(--text-primary)',
-                    textDecoration: 'none',
-                    borderRadius: '1rem',
-                    background: 'transparent',
-                    transition: 'all 0.3s ease'
-                  }}
-                  whileHover={{ 
-                    background: theme === 'dark-glass' 
-                      ? 'rgba(255, 255, 255, 0.08)' 
-                      : 'var(--bg-secondary)',
-                    color: '#22d3ee'
-                  }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  {item.name}
-                </motion.a>
+                item.isRoute ? (
+                  <motion.div
+                    key={item.name}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 20 }}
+                    transition={{ delay: index * 0.05, duration: 0.2 }}
+                    style={{ width: '100%' }}
+                  >
+                    <Link
+                      to={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className="mobile-menu-link"
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        width: '100%',
+                        padding: '1.25rem 2rem',
+                        fontSize: '1.5rem',
+                        fontWeight: 600,
+                        color: 'var(--text-primary)',
+                        textDecoration: 'none',
+                        borderRadius: '1rem',
+                        background: 'transparent'
+                      }}
+                    >
+                      {item.name}
+                    </Link>
+                  </motion.div>
+                ) : (
+                  <motion.a
+                    key={item.name}
+                    href={item.href}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 20 }}
+                    transition={{ delay: index * 0.05, duration: 0.2 }}
+                    onClick={() => setIsOpen(false)}
+                    className="mobile-menu-link"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      width: '100%',
+                      padding: '1.25rem 2rem',
+                      fontSize: '1.5rem',
+                      fontWeight: 600,
+                      color: 'var(--text-primary)',
+                      textDecoration: 'none',
+                      borderRadius: '1rem',
+                      background: 'transparent'
+                    }}
+                  >
+                    {item.name}
+                  </motion.a>
+                )
               ))}
               
               {/* Mobile CTA */}
@@ -373,6 +401,71 @@ export default function Navbar() {
         .desktop-nav, .desktop-actions { display: flex; }
         .mobile-nav { display: none; }
         .phone-link { display: flex; }
+        
+        /* Fast hover animations for navbar */
+        .navbar-logo {
+          transition: transform 0.15s ease;
+        }
+        .navbar-logo:hover {
+          transform: scale(1.05);
+        }
+        .navbar-logo:active {
+          transform: scale(0.95);
+        }
+        
+        .navbar-link {
+          transition: color 0.15s ease, transform 0.15s ease;
+        }
+        .navbar-link:hover {
+          color: #22d3ee !important;
+          transform: translateY(-2px);
+        }
+        .navbar-link:active {
+          transform: translateY(0);
+        }
+        
+        .navbar-icon-btn {
+          transition: transform 0.15s ease, background 0.15s ease;
+        }
+        .navbar-icon-btn:hover {
+          transform: scale(1.15) rotate(15deg);
+        }
+        .navbar-icon-btn:active {
+          transform: scale(0.9);
+        }
+        
+        .navbar-btn {
+          transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .navbar-btn:hover {
+          transform: translateY(-3px) scale(1.02);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        .navbar-btn:active {
+          transform: translateY(0) scale(0.98);
+        }
+        
+        .navbar-cta {
+          transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+        }
+        .navbar-cta:hover {
+          transform: translateY(-3px) scale(1.05) !important;
+        }
+        .navbar-cta:active {
+          transform: translateY(0) scale(0.95) !important;
+        }
+        
+        .mobile-menu-link {
+          transition: all 0.15s ease;
+        }
+        .mobile-menu-link:hover {
+          background: var(--bg-secondary);
+          color: #22d3ee !important;
+          transform: scale(1.02);
+        }
+        .mobile-menu-link:active {
+          transform: scale(0.98);
+        }
         
         @media (max-width: 1024px) {
           .phone-link { display: none !important; }

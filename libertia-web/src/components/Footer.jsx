@@ -50,20 +50,15 @@ export default function Footer() {
               }}
               whileHover={{ scale: 1.02 }}
             >
-              <div style={{
-                width: '2.5rem',
-                height: '2.5rem',
-                background: 'linear-gradient(135deg, #22d3ee, #2563eb)',
-                borderRadius: '0.75rem',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}>
-                <span style={{ color: 'white', fontWeight: 700, fontSize: '1.25rem' }}>L</span>
-              </div>
-              <span style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-primary)' }}>
-                Libertia<span style={{ color: '#22d3ee' }}>IT</span>
-              </span>
+              <img 
+                src="/libertia_it_logo_fondos_claros-2.webp" 
+                alt="Libertia IT" 
+                style={{
+                  height: '2.5rem',
+                  width: 'auto',
+                  objectFit: 'contain'
+                }}
+              />
             </motion.a>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', lineHeight: 1.6 }}>
               {siteContent.company.description}

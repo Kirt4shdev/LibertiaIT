@@ -154,11 +154,30 @@ export default function Testimonials() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    marginBottom: '1rem'
+                    marginBottom: '1rem',
+                    overflow: 'hidden',
+                    padding: '3px'
                   }}>
-                    <span style={{ fontSize: '1.5rem', fontWeight: 700, color: 'white' }}>
-                      {siteContent.testimonials[current].name.charAt(0)}
-                    </span>
+                    {siteContent.testimonials[current].image ? (
+                      <img 
+                        src={siteContent.testimonials[current].image}
+                        alt={siteContent.testimonials[current].name}
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          borderRadius: '50%',
+                          objectFit: 'cover'
+                        }}
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                          e.target.parentElement.innerHTML = `<span style="font-size: 1.5rem; font-weight: 700; color: white;">${siteContent.testimonials[current].name.charAt(0)}</span>`;
+                        }}
+                      />
+                    ) : (
+                      <span style={{ fontSize: '1.5rem', fontWeight: 700, color: 'white' }}>
+                        {siteContent.testimonials[current].name.charAt(0)}
+                      </span>
+                    )}
                   </div>
                   <div style={{ fontSize: '1.125rem', fontWeight: 600, color: 'var(--text-primary)' }}>
                     {siteContent.testimonials[current].name}
@@ -183,8 +202,9 @@ export default function Testimonials() {
             marginTop: '2rem' 
           }}>
             <motion.button
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1.15 }}
               whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
               onClick={prev}
               style={{
                 padding: '0.75rem',
@@ -226,8 +246,9 @@ export default function Testimonials() {
             </div>
 
             <motion.button
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1.15 }}
               whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
               onClick={next}
               style={{
                 padding: '0.75rem',
@@ -287,16 +308,16 @@ export default function Testimonials() {
             }}>
               {/* First set */}
               {[
-                { name: 'Julián de Castro', subtitle: 'Avanza', years: '+10 años' },
-                { name: 'BUSQUETS', subtitle: 'Despacho Legal', years: '+8 años' },
-                { name: 'CONCAES', subtitle: 'Gestión', years: '+5 años' },
-                { name: 'DILUS', subtitle: 'Innovación', years: '+7 años' },
-                { name: 'NextMune', subtitle: 'Farmacéutica', years: '+20 años' },
-                { name: 'Julián de Castro', subtitle: 'Avanza', years: '+10 años' },
-                { name: 'BUSQUETS', subtitle: 'Despacho Legal', years: '+8 años' },
-                { name: 'CONCAES', subtitle: 'Gestión', years: '+5 años' },
-                { name: 'DILUS', subtitle: 'Innovación', years: '+7 años' },
-                { name: 'NextMune', subtitle: 'Farmacéutica', years: '+20 años' },
+                { name: 'Julián de Castro', subtitle: 'Avanza', years: '+10 años', logo: '/images/clients/clients_5cfa1d6a9bdb.webp' },
+                { name: 'BUSQUETS', subtitle: 'Despacho Legal', years: '+8 años', logo: '/images/clients/clients_75563dbfb54b.webp' },
+                { name: 'CONCAES', subtitle: 'Gestión', years: '+5 años', logo: '/images/clients/clients_0501e8ee6d17.webp' },
+                { name: 'DILUS', subtitle: 'Innovación', years: '+7 años', logo: '/images/clients/clients_f53eebaf0fb1.webp' },
+                { name: 'NextMune', subtitle: 'Farmacéutica', years: '+20 años', logo: '/images/certifications/certifications_46d74fbaffda.webp' },
+                { name: 'Julián de Castro', subtitle: 'Avanza', years: '+10 años', logo: '/images/clients/clients_5cfa1d6a9bdb.webp' },
+                { name: 'BUSQUETS', subtitle: 'Despacho Legal', years: '+8 años', logo: '/images/clients/clients_75563dbfb54b.webp' },
+                { name: 'CONCAES', subtitle: 'Gestión', years: '+5 años', logo: '/images/clients/clients_0501e8ee6d17.webp' },
+                { name: 'DILUS', subtitle: 'Innovación', years: '+7 años', logo: '/images/clients/clients_f53eebaf0fb1.webp' },
+                { name: 'NextMune', subtitle: 'Farmacéutica', years: '+20 años', logo: '/images/certifications/certifications_46d74fbaffda.webp' },
               ].map((company, index) => (
                 <div
                   key={index}
@@ -306,7 +327,7 @@ export default function Testimonials() {
                     borderRadius: '1rem',
                     background: 'var(--bg-secondary)',
                     border: '1px solid var(--border-color)',
-                    minWidth: '200px',
+                    minWidth: '220px',
                     textAlign: 'center',
                     transition: 'all 0.3s ease',
                     cursor: 'default'
@@ -339,8 +360,38 @@ export default function Testimonials() {
                     {company.years}
                   </div>
 
+                  {/* Logo */}
+                  {company.logo && (
+                    <div style={{
+                      width: '4rem',
+                      height: '4rem',
+                      margin: '0 auto 1rem',
+                      borderRadius: '0.75rem',
+                      overflow: 'hidden',
+                      background: 'var(--bg-tertiary)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      padding: '0.5rem'
+                    }}>
+                      <img 
+                        src={company.logo} 
+                        alt={`Logo ${company.name}`}
+                        style={{
+                          maxWidth: '100%',
+                          maxHeight: '100%',
+                          objectFit: 'contain',
+                          filter: 'var(--client-logo-filter, none)'
+                        }}
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                        }}
+                      />
+                    </div>
+                  )}
+
                   <div style={{
-                    fontSize: '1.25rem',
+                    fontSize: '1.1rem',
                     fontWeight: 700,
                     color: 'var(--text-primary)',
                     marginBottom: '0.25rem'
@@ -348,7 +399,7 @@ export default function Testimonials() {
                     {company.name}
                   </div>
                   <div style={{
-                    fontSize: '0.8rem',
+                    fontSize: '0.75rem',
                     color: 'var(--text-muted)',
                     textTransform: 'uppercase',
                     letterSpacing: '0.1em'
@@ -399,6 +450,74 @@ export default function Testimonials() {
                 </div>
               </motion.div>
             ))}
+          </div>
+
+          {/* Certifications */}
+          <div style={{ marginTop: '3rem' }}>
+            <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+              <span style={{
+                display: 'inline-block',
+                padding: '0.4rem 1rem',
+                borderRadius: '9999px',
+                background: 'rgba(168, 85, 247, 0.1)',
+                border: '1px solid rgba(168, 85, 247, 0.2)',
+                color: 'var(--text-secondary)',
+                fontSize: '0.75rem',
+                fontWeight: 500,
+                letterSpacing: '0.05em',
+                textTransform: 'uppercase'
+              }}>
+                Certificaciones y Partners
+              </span>
+            </div>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              gap: '2rem',
+              flexWrap: 'wrap',
+              alignItems: 'center'
+            }}>
+              {[
+                '/images/logos/logos_9c2ab2ab5299.webp',
+                '/images/logos/logos_318954208de9.webp',
+                '/images/logos/logos_19f509e88bf8.webp',
+                '/images/certifications/certifications_475e7fc5698a.webp',
+                '/images/certifications/certifications_eb1ad026fc5a.webp',
+              ].map((logo, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  style={{
+                    width: '5rem',
+                    height: '5rem',
+                    padding: '0.75rem',
+                    borderRadius: '1rem',
+                    background: 'var(--bg-secondary)',
+                    border: '1px solid var(--border-color)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}
+                >
+                  <img 
+                    src={logo}
+                    alt="Certificación"
+                    style={{
+                      maxWidth: '100%',
+                      maxHeight: '100%',
+                      objectFit: 'contain',
+                      opacity: 0.85
+                    }}
+                    onError={(e) => {
+                      e.target.parentElement.style.display = 'none';
+                    }}
+                  />
+                </motion.div>
+              ))}
+            </div>
           </div>
         </motion.div>
 

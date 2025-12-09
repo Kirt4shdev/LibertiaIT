@@ -99,8 +99,9 @@ export default function Contact() {
             }} className="actions-grid">
               <motion.a
                 href="#"
-                whileHover={{ scale: 1.02, y: -2 }}
+                whileHover={{ scale: 1.05, y: -4 }}
                 whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 style={{
                   padding: '1.5rem',
                   borderRadius: '1rem',
@@ -119,8 +120,9 @@ export default function Contact() {
               </motion.a>
               <motion.a
                 href={`tel:+34${siteContent.company.phone.replace(/\s/g, '')}`}
-                whileHover={{ scale: 1.02, y: -2 }}
+                whileHover={{ scale: 1.05, y: -4 }}
                 whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 style={{
                   padding: '1.5rem',
                   borderRadius: '1rem',
@@ -142,8 +144,9 @@ export default function Contact() {
                 href={`https://wa.me/34${siteContent.company.phone.replace(/\s/g, '')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.02, y: -2 }}
+                whileHover={{ scale: 1.05, y: -4 }}
                 whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 style={{
                   padding: '1.5rem',
                   borderRadius: '1rem',
@@ -389,8 +392,9 @@ export default function Contact() {
 
               <motion.button
                 type="submit"
-                whileHover={{ scale: 1.02 }}
+                whileHover={{ scale: 1.03, y: -2 }}
                 whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 className="btn-primary"
                 style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}
               >
