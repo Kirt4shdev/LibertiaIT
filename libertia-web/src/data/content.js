@@ -339,8 +339,8 @@ export const navigation = [
   { name: 'Inicio', href: '#hero' },
   { name: 'Servicios', href: '#services' },
   { name: 'Nosotros', href: '#about' },
-  { name: 'Blog', href: '/blog', isRoute: true },
   { name: 'Testimonios', href: '#testimonials' },
-  { name: 'Contacto', href: '#contact' }
+  { name: 'Contacto', href: '#contact' },
+  { name: 'Blog', href: '/blog', isRoute: true }
 ];
 

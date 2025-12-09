@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Problems from '../components/Problems';
@@ -10,6 +11,11 @@ import Footer from '../components/Footer';
 import LightOrbs from '../components/LightOrbs';
 
 export default function HomePage() {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div style={{ position: 'relative', minHeight: '100vh' }}>
       {/* Light Orbs - animated background lights */}

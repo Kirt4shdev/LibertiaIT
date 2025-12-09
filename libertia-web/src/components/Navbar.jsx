@@ -9,6 +9,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { theme, cycleTheme } = useTheme();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -111,7 +112,13 @@ export default function Navbar() {
                 style={{
                   height: '2.5rem',
                   width: 'auto',
-                  objectFit: 'contain'
+                  objectFit: 'contain',
+                  filter: theme === 'dark-glass' 
+                    ? 'brightness(1.4) saturate(1.1) drop-shadow(0 2px 4px rgba(255, 255, 255, 0.3))' 
+                    : theme === 'dark'
+                      ? 'brightness(1.3) saturate(1.05)'
+                      : 'none',
+                  transition: 'filter 0.3s ease'
                 }}
               />
             </Link>
@@ -127,14 +134,14 @@ export default function Navbar() {
                     style={{
                       position: 'relative',
                       padding: '0.5rem 1rem',
-                      color: 'var(--text-secondary)',
+                      color: location.pathname === item.href ? '#22d3ee' : 'var(--text-secondary)',
                       textDecoration: 'none',
                       fontSize: '0.9rem'
                     }}
                   >
                     {item.name}
                   </Link>
-                ) : (
+                ) : location.pathname === '/' ? (
                   <a
                     key={item.name}
                     href={item.href}
@@ -149,6 +156,21 @@ export default function Navbar() {
                   >
                     {item.name}
                   </a>
+                ) : (
+                  <Link
+                    key={item.name}
+                    to={`/${item.href}`}
+                    className="navbar-link"
+                    style={{
+                      position: 'relative',
+                      padding: '0.5rem 1rem',
+                      color: 'var(--text-secondary)',
+                      textDecoration: 'none',
+                      fontSize: '0.9rem'
+                    }}
+                  >
+                    {item.name}
+                  </Link>
                 )
               ))}
             </div>
@@ -311,7 +333,7 @@ export default function Navbar() {
                         padding: '1.25rem 2rem',
                         fontSize: '1.5rem',
                         fontWeight: 600,
-                        color: 'var(--text-primary)',
+                        color: location.pathname === item.href ? '#22d3ee' : 'var(--text-primary)',
                         textDecoration: 'none',
                         borderRadius: '1rem',
                         background: 'transparent'
@@ -320,7 +342,7 @@ export default function Navbar() {
                       {item.name}
                     </Link>
                   </motion.div>
-                ) : (
+                ) : location.pathname === '/' ? (
                   <motion.a
                     key={item.name}
                     href={item.href}
@@ -346,32 +368,90 @@ export default function Navbar() {
                   >
                     {item.name}
                   </motion.a>
+                ) : (
+                  <motion.div
+                    key={item.name}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 20 }}
+                    transition={{ delay: index * 0.05, duration: 0.2 }}
+                    style={{ width: '100%' }}
+                  >
+                    <Link
+                      to={`/${item.href}`}
+                      onClick={() => setIsOpen(false)}
+                      className="mobile-menu-link"
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        width: '100%',
+                        padding: '1.25rem 2rem',
+                        fontSize: '1.5rem',
+                        fontWeight: 600,
+                        color: 'var(--text-primary)',
+                        textDecoration: 'none',
+                        borderRadius: '1rem',
+                        background: 'transparent'
+                      }}
+                    >
+                      {item.name}
+                    </Link>
+                  </motion.div>
                 )
               ))}
               
               {/* Mobile CTA */}
-              <motion.a
-                href="#contact"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 20 }}
-                transition={{ delay: navigation.length * 0.08 + 0.1, duration: 0.3 }}
-                onClick={() => setIsOpen(false)}
-                className="btn-primary"
-                style={{ 
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '0.75rem',
-                  width: '100%',
-                  marginTop: '1.5rem',
-                  padding: '1.25rem 2rem',
-                  fontSize: '1.25rem'
-                }}
-              >
-                Contactar ahora
-                <ArrowRight style={{ width: '1.5rem', height: '1.5rem' }} />
-              </motion.a>
+              {location.pathname === '/' ? (
+                <motion.a
+                  href="#contact"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
+                  transition={{ delay: navigation.length * 0.08 + 0.1, duration: 0.3 }}
+                  onClick={() => setIsOpen(false)}
+                  className="btn-primary"
+                  style={{ 
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '0.75rem',
+                    width: '100%',
+                    marginTop: '1.5rem',
+                    padding: '1.25rem 2rem',
+                    fontSize: '1.25rem'
+                  }}
+                >
+                  Contactar ahora
+                  <ArrowRight style={{ width: '1.5rem', height: '1.5rem' }} />
+                </motion.a>
+              ) : (
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
+                  transition={{ delay: navigation.length * 0.08 + 0.1, duration: 0.3 }}
+                  style={{ width: '100%', marginTop: '1.5rem' }}
+                >
+                  <Link
+                    to="/#contact"
+                    onClick={() => setIsOpen(false)}
+                    className="btn-primary"
+                    style={{ 
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '0.75rem',
+                      width: '100%',
+                      padding: '1.25rem 2rem',
+                      fontSize: '1.25rem'
+                    }}
+                  >
+                    Contactar ahora
+                    <ArrowRight style={{ width: '1.5rem', height: '1.5rem' }} />
+                  </Link>
+                </motion.div>
+              )}
 
               {/* Phone number */}
               <motion.a

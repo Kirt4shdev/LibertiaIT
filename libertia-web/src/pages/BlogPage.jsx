@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
@@ -40,6 +40,11 @@ export default function BlogPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
 
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Filtrar posts
   const filteredPosts = blogPosts.filter(post => {
     const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -79,33 +84,6 @@ export default function BlogPage() {
               margin: '0 auto', 
               padding: '0 1.5rem' 
             }}>
-              {/* Breadcrumb */}
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                style={{ marginBottom: '2rem' }}
-              >
-                <Link 
-                  to="/" 
-                  style={{ 
-                    display: 'inline-flex', 
-                    alignItems: 'center', 
-                    gap: '0.5rem',
-                    color: 'var(--text-muted)',
-                    textDecoration: 'none',
-                    fontSize: '0.875rem',
-                    transition: 'color 0.2s'
-                  }}
-                  onMouseEnter={(e) => e.target.style.color = '#22d3ee'}
-                  onMouseLeave={(e) => e.target.style.color = 'var(--text-muted)'}
-                >
-                  <Home style={{ width: '1rem', height: '1rem' }} />
-                  <span>Inicio</span>
-                  <span style={{ margin: '0 0.5rem' }}>/</span>
-                  <span style={{ color: '#22d3ee' }}>Blog</span>
-                </Link>
-              </motion.div>
-
               {/* Header */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
