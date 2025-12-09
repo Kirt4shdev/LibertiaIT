@@ -329,72 +329,74 @@ export default function AboutUs() {
                 transition={{ duration: 0.5, delay: index * 0.08 }}
                 className="card-hover"
                 style={{
-                  padding: '1.5rem',
                   borderRadius: '1.25rem',
                   background: 'var(--bg-secondary)',
                   border: '1px solid var(--border-color)',
-                  textAlign: 'center'
+                  textAlign: 'center',
+                  overflow: 'hidden'
                 }}
               >
-                {/* Photo Container with Gradient Border */}
+                {/* Photo - Full width, rounded top only */}
                 <div style={{
-                  width: '7rem',
-                  height: '7rem',
-                  margin: '0 auto 1.25rem',
-                  borderRadius: '50%',
-                  padding: '3px',
-                  background: 'linear-gradient(135deg, #06b6d4, #a855f7, #ec4899)',
-                  boxShadow: '0 8px 24px rgba(6, 182, 212, 0.2)'
+                  width: '100%',
+                  height: '12rem',
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}>
-                  <div style={{
-                    width: '100%',
-                    height: '100%',
-                    borderRadius: '50%',
-                    overflow: 'hidden',
-                    background: 'var(--bg-secondary)'
-                  }}>
-                    {member.image ? (
-                      <img 
-                        src={member.image} 
-                        alt={member.name}
-                        style={{
-                          width: '100%',
-                          height: '100%',
-                          objectFit: 'cover',
-                          objectPosition: 'center top'
-                        }}
-                      />
-                    ) : (
-                      <div style={{ 
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
+                  {member.image ? (
+                    <img 
+                      src={member.image} 
+                      alt={member.name}
+                      style={{
                         width: '100%',
                         height: '100%',
-                        background: 'linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(6, 182, 212, 0.2))'
-                      }}>
-                        <User style={{ width: '2.5rem', height: '2.5rem', color: 'var(--text-muted)' }} />
-                      </div>
-                    )}
-                  </div>
+                        objectFit: 'cover',
+                        objectPosition: 'center top'
+                      }}
+                    />
+                  ) : (
+                    <div style={{ 
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      width: '100%',
+                      height: '100%',
+                      background: 'linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(6, 182, 212, 0.2))'
+                    }}>
+                      <User style={{ width: '3rem', height: '3rem', color: 'var(--text-muted)' }} />
+                    </div>
+                  )}
+                  {/* Gradient overlay at bottom */}
+                  <div style={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    height: '50%',
+                    background: 'linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent)',
+                    pointerEvents: 'none'
+                  }} />
                 </div>
 
-                <h4 style={{ 
-                  fontSize: '1.1rem', 
-                  fontWeight: 600, 
-                  color: 'var(--text-primary)', 
-                  marginBottom: '0.375rem' 
-                }}>
-                  {member.name}
-                </h4>
-                <p style={{ 
-                  fontSize: '0.8rem', 
-                  color: '#22d3ee', 
-                  fontWeight: 500,
-                  lineHeight: 1.4
-                }}>
-                  {member.role}
-                </p>
+                {/* Text content */}
+                <div style={{ padding: '1.25rem' }}>
+                  <h4 style={{ 
+                    fontSize: '1.1rem', 
+                    fontWeight: 600, 
+                    color: 'var(--text-primary)', 
+                    marginBottom: '0.375rem' 
+                  }}>
+                    {member.name}
+                  </h4>
+                  <p style={{ 
+                    fontSize: '0.8rem', 
+                    color: '#22d3ee', 
+                    fontWeight: 500,
+                    lineHeight: 1.4
+                  }}>
+                    {member.role}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
