@@ -250,88 +250,447 @@ export const aboutUs = {
   ]
 };
 
-// Artículos del Blog
+// Artículos del Blog (147 artículos extraídos del sitio original)
 export const blogPosts = [
   {
-    id: 1,
-    title: "Estafas por Redes Sociales: Guía Completa de Protección 2025",
-    excerpt: "Las estafas por redes sociales se han convertido en una de las principales amenazas cibernéticas. Aprende a identificar y evitar los fraudes más comunes.",
+    title: "Estafas por Redes Sociales: Guía de Protección 2025",
+    excerpt: "Aprende a identificar y evitar las estafas por redes sociales más comunes en 2025. Consejos de ciberseguridad para proteger tus datos en internet.",
     category: "Ciberseguridad",
-    date: "2025-01-15",
-    readTime: "12 min",
-    url: "https://libertia.es/estafas-por-redes-sociales-2025"
+    date: "2024",
+    readTime: "5 min",
+    featured: true
   },
   {
-    id: 2,
-    title: "Ciberseguridad en la Industria 4.0",
-    excerpt: "Descubre cómo proteger tu empresa en la era de la Industria 4.0 y las principales amenazas a las que te enfrentas.",
-    category: "Industria",
-    date: "2025-01-10",
-    readTime: "10 min",
-    url: "https://libertia.es/ciberseguridad-en-la-industria-4-0"
+    title: "Industria 4.0 en Madrid: Ciberseguridad para Empresas 2025",
+    excerpt: "Expertos en ciberseguridad para industria 4.0 en Madrid. Protege tu transformación digital con soluciones especializadas.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
   },
   {
-    id: 3,
+    title: "Ciberseguridad en alerta: el apagón que hoy sacude a España y Portugal",
+    excerpt: "Hoy, 28 de abril, España y Portugal enfrentan un apagón masivo que evidencia la fragilidad de nuestras infraestructuras críticas.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Charlas de Ciberseguridad para Empresas en Madrid | 2025",
+    excerpt: "Charlas de ciberseguridad especializadas para empresas en Madrid. Reduce incidentes hasta 80% con formación práctica de expertos.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Privacidad y Seguridad en redes sociales Madrid 2025",
+    excerpt: "Guía completa sobre privacidad y seguridad en redes sociales en Madrid 2025. Instagram, Facebook, TikTok, y más...",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Ciberataques en Madrid: Amenazas y Protección en 2025",
+    excerpt: "Descubre la situación actual de los ciberataques en Madrid, los tipos más frecuentes, cómo afectan a tu empresa y las mejores estrategias de protección.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Certificados en Ciberseguridad para Empresas en España",
+    excerpt: "Qué son los certificados en ciberseguridad, quiénes los otorgan, son obligatorios, y cómo favorecen a aumentar el prestigio de tu empresa en Madrid.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Principales Ciberataques del 2024 en España",
+    excerpt: "Repasamos los incidentes de ciberataques más relevantes del año en España, sus consecuencias y las futuras amenazas en el 2025.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "KPI de Ciberseguridad Madrid | Guía para empresas 2025",
+    excerpt: "Descubre los KPI de ciberseguridad esenciales para empresas en Madrid. Guía completa con métricas, herramientas y casos de éxito.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Claves del Esquema Nacional de Seguridad en Madrid",
+    excerpt: "Descubre qué es el Esquema Nacional de Seguridad y cómo puedes fortalecer tu seguridad digital y garantizar el cumplimiento normativo.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Pasos Claves Tras Sufrir un Ciberataque | Guía 2025 Madrid",
+    excerpt: "Descubre los pasos esenciales para recuperarte tras un ciberataque en Madrid. Medidas efectivas de ciberseguridad para proteger los datos de tu empresa.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Protocolos de Seguridad Informática: Guía Completa 2025",
+    excerpt: "Descubre los principales protocolos de seguridad informática, cómo implementarlos en tu empresa y proteger tus datos con medidas efectivas.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "7 Pasos para Mejorar la Privacidad y Seguridad en Internet",
+    excerpt: "Guía práctica de 7 pasos para ayudar a las empresas en Madrid a fortalecer su privacidad y seguridad digital.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Seguridad en la Nube: 5 Tips para Proteger tus Datos",
+    excerpt: "Te compartimos cinco consejos clave para garantizar la seguridad en la nube, evitando vulnerabilidades y reduciendo el riesgo de ciberataques.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Cyber Security World Madrid 2025",
+    excerpt: "Todo sobre Cyber Security World Madrid 2025: fechas, ubicación, expositores y programa. Guía completa para empresas en ciberseguridad.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Capacitación en Ciberseguridad: Formación Integral 2025",
+    excerpt: "Descubre programas completos de capacitación en ciberseguridad para empresas y empleados. Guía definitiva para Madrid 2025.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Estafas por WhatsApp 2025: Guía para Protegerte en Madrid",
+    excerpt: "Descubre cómo identificar y prevenir estafas por WhatsApp en Madrid 2025. Guía completa con medidas y recursos de ciberseguridad.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "8 Pasos para Mejorar la Seguridad en tu Correo Electrónico",
+    excerpt: "Siguiendo estos 8 pasos podrás reducir significativamente los riesgos de ataques y fraudes en tu correo electrónico.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Requisitos Básicos de Seguridad Informática: Checklist 2025",
+    excerpt: "Descubre los requisitos básicos de seguridad informática que toda empresa en Madrid debe implementar. Checklist 2025 completo.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Ciberseguridad en el Sector Aeronáutico: Protección Total",
+    excerpt: "Descubre cómo la ciberseguridad en el sector aeronáutico protege sistemas críticos frente a amenazas. Soluciones especializadas para empresas en Madrid.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Reglamento General de Protección de Datos (RGPD)",
+    excerpt: "¿Qué es el RGPD y por qué es importante para las empresas en Madrid? Beneficios y sanciones de esta normativa europea de carácter obligatorio.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Guía de Concienciación en Ciberseguridad 2025",
+    excerpt: "Descubre cómo implementar un eficaz plan de concienciación en ciberseguridad para proteger tu empresa en Madrid.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Tendencias emergentes 2025: Ciberseguridad en Madrid",
+    excerpt: "Descubre las principales tendencias emergentes en ciberseguridad para empresas en Madrid 2025.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Autenticación en dos pasos - ¿Por qué activarla?",
+    excerpt: "Descubre en qué consiste la autenticación en dos pasos y cómo utilizarla para mejorar tu seguridad digital.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Escaneo de Vulnerabilidades: Fundamentos y Herramientas",
+    excerpt: "El escaneo de vulnerabilidades: un proceso que permite identificar, clasificar y priorizar debilidades en la infraestructura informática de una empresa.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Estadísticas de ciberataques en Madrid 2025",
+    excerpt: "Descubre las últimas estadísticas de ciberataques en Madrid 2025. El 38% de incidentes se concentran en la capital. Protege tu empresa.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Autenticación Multifactor (MFA): Una Herramienta Esencial",
+    excerpt: "¿Qué es exactamente la Autenticación Multifactor (MFA) y cómo puede transformar la ciberseguridad de tu empresa en Madrid?",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Plan de Seguridad Informática: Guía Completa para Empresas",
+    excerpt: "Cómo estructurar un plan de seguridad informática efectivo, los elementos clave y las mejores herramientas para proteger tu empresa en Madrid.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "10 Errores Comunes en Seguridad Informática y Cómo Evitarlos",
+    excerpt: "Descubre los errores comunes en seguridad informática que ponen en riesgo los datos de tu empresa en Madrid. Protégete con las mejores prácticas.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Claves para una Estrategia de Ciberseguridad Eficaz",
+    excerpt: "Descubre cómo implementar una estrategia de ciberseguridad efectiva y protege tu organización de amenazas digitales.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "¿Qué hace un Especialista en Ciberseguridad en Madrid?",
+    excerpt: "Madrid concentra un creciente número de amenazas cibernéticas que ponen en riesgo la continuidad de negocio.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Gestión de Acceso: 6 Razones Claves a Considerar",
+    excerpt: "Descubre las 6 Razones por las Cuales la Gestión de Acceso se ha Convertido en una Parte Crítica de la Ciberseguridad en Madrid.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Mejora tu Ciberseguridad en 5 prácticos pasos",
+    excerpt: "Te explicamos de manera sencilla 5 trucos que puedes poner ya en marcha para mejorar tu seguridad.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
     title: "Ciberseguridad en el Sector de Hostelería en Madrid",
-    excerpt: "El 60% de los restaurantes y hoteles en España han sufrido al menos un ciberataque. Protege tu negocio de hostelería.",
+    excerpt: "Descubre los desafíos de ciberseguridad que enfrenta el sector de hostelería en Madrid.",
     category: "Hostelería",
-    date: "2025-01-05",
-    readTime: "15 min",
-    url: "https://libertia.es/ciberseguridad-en-el-sector-de-hosteleria"
+    date: "2024",
+    readTime: "5 min",
+    featured: false
   },
   {
-    id: 4,
-    title: "Tendencias Emergentes en Ciberseguridad 2025",
-    excerpt: "Descubre las últimas tendencias en ciberseguridad que marcarán el rumbo de la protección digital empresarial.",
-    category: "Tendencias",
-    date: "2024-12-28",
-    readTime: "8 min",
-    url: "https://libertia.es/tendencias-emergentes-en-ciberseguridad-2025"
+    title: "Ciberseguridad - ¿Qué es?",
+    excerpt: "Descubre qué es la ciberseguridad, por qué es tan importante y cómo puedes proteger a tu empresa.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
   },
   {
-    id: 5,
-    title: "Estadísticas de Ciberataques en Madrid 2025",
-    excerpt: "Análisis completo de los ciberataques más frecuentes en empresas madrileñas y cómo prevenirlos.",
-    category: "Estadísticas",
-    date: "2024-12-20",
-    readTime: "10 min",
-    url: "https://libertia.es/estadisticas-de-ciberataques-en-madrid-2025"
+    title: "Como es un phising y como evitarlo de manera sencilla",
+    excerpt: "Existen muchos modos de enviar un email con virus, phising, y en general contenido malicioso. Te damos unos tips para que por ti mismo puedas identificarlos.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
   },
   {
-    id: 6,
-    title: "Qué es un MSP y por qué tu empresa lo necesita",
-    excerpt: "Descubre qué es un proveedor de servicios gestionados y cómo puede transformar la gestión tecnológica de tu empresa.",
-    category: "Servicios",
-    date: "2024-12-15",
-    readTime: "7 min",
-    url: "https://libertia.es/que-es-un-msp"
+    title: "Auditoría de Ciberseguridad para Empresas",
+    excerpt: "Tu empresa puede tener antivirus, contraseñas y hacer copias de seguridad, pero aun así estar llena de grietas invisibles.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
   },
   {
-    id: 7,
-    title: "10 Errores Comunes en Seguridad Informática",
-    excerpt: "Los errores más frecuentes que cometen las empresas en ciberseguridad y cómo evitarlos.",
+    title: "Cómo Elegir una Empresa de Ciberseguridad: Guía Práctica",
+    excerpt: "Te mostramos los 10 criterios fundamentales para elegir una empresa de ciberseguridad en Madrid.",
+    category: "Ciberseguridad",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Protección de virus en Madrid 2025 | Guía práctica",
+    excerpt: "Guía completa de protección de virus para empresas en Madrid 2025. Estrategias, herramientas y soluciones de ciberseguridad.",
     category: "Consejos",
-    date: "2024-12-10",
-    readTime: "9 min",
-    url: "https://libertia.es/10-errores-comunes-en-seguridad-informatica"
+    date: "2024",
+    readTime: "5 min",
+    featured: false
   },
   {
-    id: 8,
-    title: "Esquema Nacional de Seguridad (ENS)",
-    excerpt: "Todo lo que necesitas saber sobre el ENS y cómo conseguir la certificación para tu empresa.",
+    title: "Guía Paso a Paso: Cómo Prevenir Ataques Web en 2025",
+    excerpt: "Guía completa para prevenir ataques web en 2025. Paso a paso práctico por expertos en ciberseguridad de Madrid.",
+    category: "Consejos",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Co-managed IT: que y como externalizar si ya tienes IT interno",
+    excerpt: "Las necesidades IT de los negocios se hacen cada vez más complejas. Algunos MSP ofrecen servicios co-gestionados.",
+    category: "Consejos",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "4 razones por la que debes tener tu norma ISO 27001",
+    excerpt: "La ISO 27001 es una norma internacional de seguridad de la información que ayuda a asegurar la confidencialidad, integridad y disponibilidad de los datos.",
     category: "Cumplimiento",
-    date: "2024-12-05",
-    readTime: "11 min",
-    url: "https://libertia.es/esquema-nacional-de-seguridad"
+    date: "2024",
+    readTime: "5 min",
+    featured: false
   },
   {
-    id: 9,
-    title: "Autenticación Multifactor (MFA): Guía Completa",
-    excerpt: "Implementa MFA en tu empresa y protege tus sistemas contra accesos no autorizados.",
-    category: "Seguridad",
-    date: "2024-11-28",
-    readTime: "8 min",
-    url: "https://libertia.es/ciberseguridad-autenticacion-multifactor-mfa"
+    title: "MSP: Qué es un Proveedor de Servicios Gestionados en el 2025",
+    excerpt: "Descubre qué es un MSP o Proveedor de Servicios Gestionados, sus beneficios para reducir costos IT y mejorar la seguridad de tu empresa en Madrid.",
+    category: "Servicios",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Outsourcing y Freelancers en Madrid: ¿Cuál elegir?",
+    excerpt: "Contrataciones outsourcing o freelancers: ¿Cuál es la mejor opción para tu negocio? Aspectos a considerar antes de tomar una decisión.",
+    category: "Servicios",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Qué es outsourcing",
+    excerpt: "Descubre qué es el outsourcing y cómo puedes hacer crecer a tu empresa mediante un proveedor de servicios gestionados (MSP).",
+    category: "Servicios",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "MSP vs MSSP: ¿Cuál es la diferencia? | Guía completa 2025",
+    excerpt: "Descubre las diferencias entre MSP y MSSP, qué necesitas para tu empresa en Madrid y cómo estos proveedores pueden protegerte contra ciberataques.",
+    category: "Servicios",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Firewall vs VPN: ¿Cuál elegir para tu seguridad en red?",
+    excerpt: "Descubre las diferencias entre firewall vs VPN, sus funciones principales y cómo pueden complementarse para proteger tus datos y comunicaciones.",
+    category: "Tecnología",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Herramienta EDR en Madrid 2025 | Protección Empresarial",
+    excerpt: "Descubre cómo una herramienta EDR puede proteger tu empresa en Madrid en 2025. Detección avanzada, respuesta inmediata con expertos.",
+    category: "Tecnología",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Hardware y Software: Diferencias Claves",
+    excerpt: "Principales diferencias del hardware y software, y cómo realizar el mantenimiento informático adecuado para cada uno de ellos.",
+    category: "Tecnología",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Gestor de Contraseñas 2025: Seguridad y Protección Digital",
+    excerpt: "Protege tu empresa madrileña con el mejor gestor de contraseñas 2025. Expertos en ciberseguridad Libertia.",
+    category: "Tecnología",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Big Data: Algo esencial para la Transformación Digital",
+    excerpt: "¿Qué es Big Data y cuál es su importancia en la Transformación Digital? Descubre los aspectos principales de esta tecnología esencial.",
+    category: "Tendencias",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "ERP -Planificación de Recursos Empresariales- Implementación",
+    excerpt: "Entérate de cómo una buena Planificación de Recursos Empresariales (ERP) puede llevar a tu empresa al siguiente nivel de la optimización.",
+    category: "Tendencias",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Dispositivos IoT - Cómo protegerlos de ciberataques",
+    excerpt: "Descubre qué son los dispositivos IoT y cómo puedes identificar su vulnerabilidad para poder prevenir ciberamenazas.",
+    category: "Tendencias",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "Transformación Digital: Tecnología Esencial para tu empresa",
+    excerpt: "Descubre la tecnología esencial que necesitas para llevar a cabo una exitosa transformación digital. Qué hardware y software son necesarios.",
+    category: "Tendencias",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
+  },
+  {
+    title: "El Futuro del IoT: Seguridad y Desafíos Cibernéticos",
+    excerpt: "El futuro del IoT es hoy. Te contamos las medidas que las empresas en Madrid necesitan adoptar para estar protegidas de ciberataques.",
+    category: "Tendencias",
+    date: "2024",
+    readTime: "5 min",
+    featured: false
   }
 ];
 

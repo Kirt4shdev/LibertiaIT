@@ -398,11 +398,8 @@ export default function BlogPage() {
                   gap: '1.5rem'
                 }}>
                   {filteredPosts.map((post, index) => (
-                    <motion.a
-                      key={post.id}
-                      href={post.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <motion.div
+                      key={post.id || index}
                       initial={{ opacity: 0, y: 30 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: index * 0.05 }}
@@ -415,7 +412,8 @@ export default function BlogPage() {
                         background: 'var(--bg-secondary)',
                         border: '1px solid var(--border-color)',
                         textDecoration: 'none',
-                        height: '100%'
+                        height: '100%',
+                        cursor: 'default'
                       }}
                     >
                       {/* Header */}
@@ -488,20 +486,20 @@ export default function BlogPage() {
                         </div>
                       </div>
 
-                      {/* Read More */}
+                      {/* Read More - Info message */}
                       <div style={{
                         display: 'flex',
                         alignItems: 'center',
                         gap: '0.5rem',
                         marginTop: '1rem',
-                        color: '#22d3ee',
+                        color: 'var(--text-muted)',
                         fontSize: '0.875rem',
                         fontWeight: 500
                       }}>
-                        <span>Leer más</span>
-                        <ArrowRight style={{ width: '1rem', height: '1rem' }} />
+                        <BookOpen style={{ width: '1rem', height: '1rem' }} />
+                        <span>Contenido de referencia</span>
                       </div>
-                    </motion.a>
+                    </motion.div>
                   ))}
                 </div>
               ) : (
