@@ -288,121 +288,76 @@ export default function Testimonials() {
               letterSpacing: '0.05em',
               textTransform: 'uppercase'
             }}>
-              ✦ Confían en nosotros ✦
+              Confían en nosotros
             </span>
           </div>
 
-          {/* Marquee Container */}
+          {/* Marquee Container - Text Only */}
           <div style={{
             position: 'relative',
             overflow: 'hidden',
-            padding: '2rem 0',
-            maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
-            WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)'
+            padding: '2rem 0'
           }}>
             <div style={{
               display: 'flex',
-              gap: '3rem',
-              animation: 'marquee 25s linear infinite',
+              gap: '2rem',
+              animation: 'marquee 30s linear infinite',
               width: 'max-content'
             }}>
               {/* First set */}
               {[
-                { name: 'Julián de Castro', subtitle: 'Avanza', years: '+10 años', logo: '/images/clients/clients_5cfa1d6a9bdb.webp' },
-                { name: 'BUSQUETS', subtitle: 'Despacho Legal', years: '+8 años', logo: '/images/clients/clients_75563dbfb54b.webp' },
-                { name: 'CONCAES', subtitle: 'Gestión', years: '+5 años', logo: '/images/clients/clients_0501e8ee6d17.webp' },
-                { name: 'DILUS', subtitle: 'Innovación', years: '+7 años', logo: '/images/clients/clients_f53eebaf0fb1.webp' },
-                { name: 'NextMune', subtitle: 'Farmacéutica', years: '+20 años', logo: '/images/certifications/certifications_46d74fbaffda.webp' },
-                { name: 'Julián de Castro', subtitle: 'Avanza', years: '+10 años', logo: '/images/clients/clients_5cfa1d6a9bdb.webp' },
-                { name: 'BUSQUETS', subtitle: 'Despacho Legal', years: '+8 años', logo: '/images/clients/clients_75563dbfb54b.webp' },
-                { name: 'CONCAES', subtitle: 'Gestión', years: '+5 años', logo: '/images/clients/clients_0501e8ee6d17.webp' },
-                { name: 'DILUS', subtitle: 'Innovación', years: '+7 años', logo: '/images/clients/clients_f53eebaf0fb1.webp' },
-                { name: 'NextMune', subtitle: 'Farmacéutica', years: '+20 años', logo: '/images/certifications/certifications_46d74fbaffda.webp' },
+                { name: 'Julián de Castro', subtitle: 'Avanza', years: '+10 años' },
+                { name: 'BUSQUETS', subtitle: 'Despacho Legal', years: '+8 años' },
+                { name: 'CONCAES', subtitle: 'Gestión', years: '+5 años' },
+                { name: 'DILUS', subtitle: 'Innovación', years: '+7 años' },
+                { name: 'NextMune', subtitle: 'Farmacéutica', years: '+20 años' },
+                { name: 'Julián de Castro', subtitle: 'Avanza', years: '+10 años' },
+                { name: 'BUSQUETS', subtitle: 'Despacho Legal', years: '+8 años' },
+                { name: 'CONCAES', subtitle: 'Gestión', years: '+5 años' },
+                { name: 'DILUS', subtitle: 'Innovación', years: '+7 años' },
+                { name: 'NextMune', subtitle: 'Farmacéutica', years: '+20 años' },
               ].map((company, index) => (
                 <div
                   key={index}
                   style={{
                     position: 'relative',
-                    padding: '1.5rem 2rem',
-                    borderRadius: '1rem',
-                    background: 'var(--bg-secondary)',
+                    padding: '1.25rem 1.75rem',
+                    borderRadius: '0.75rem',
+                    background: 'transparent',
                     border: '1px solid var(--border-color)',
-                    minWidth: '220px',
+                    minWidth: '180px',
                     textAlign: 'center',
-                    transition: 'all 0.3s ease',
-                    cursor: 'default'
+                    transition: 'all 0.3s ease'
                   }}
                   className="client-card"
                 >
-                  {/* Glow effect on hover */}
+                  {/* Years badge - minimalist */}
                   <div style={{
-                    position: 'absolute',
-                    inset: '-1px',
-                    borderRadius: '1rem',
-                    background: 'linear-gradient(135deg, rgba(6, 182, 212, 0.3), rgba(168, 85, 247, 0.3))',
-                    opacity: 0,
-                    transition: 'opacity 0.3s ease',
-                    zIndex: -1
-                  }} className="card-glow" />
-                  
-                  {/* Years badge */}
-                  <div style={{
-                    position: 'absolute',
-                    top: '-0.75rem',
-                    right: '1rem',
-                    padding: '0.25rem 0.75rem',
-                    borderRadius: '9999px',
-                    background: 'linear-gradient(135deg, #06b6d4, #8b5cf6)',
-                    color: 'white',
-                    fontSize: '0.7rem',
-                    fontWeight: 600
+                    fontSize: '0.65rem',
+                    color: '#22d3ee',
+                    fontWeight: 600,
+                    marginBottom: '0.5rem',
+                    letterSpacing: '0.05em',
+                    textTransform: 'uppercase'
                   }}>
                     {company.years}
                   </div>
 
-                  {/* Logo */}
-                  {company.logo && (
-                    <div style={{
-                      width: '4rem',
-                      height: '4rem',
-                      margin: '0 auto 1rem',
-                      borderRadius: '0.75rem',
-                      overflow: 'hidden',
-                      background: 'var(--bg-tertiary)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      padding: '0.5rem'
-                    }}>
-                      <img 
-                        src={company.logo} 
-                        alt={`Logo ${company.name}`}
-                        style={{
-                          maxWidth: '100%',
-                          maxHeight: '100%',
-                          objectFit: 'contain',
-                          filter: 'var(--client-logo-filter, none)'
-                        }}
-                        onError={(e) => {
-                          e.target.style.display = 'none';
-                        }}
-                      />
-                    </div>
-                  )}
-
                   <div style={{
                     fontSize: '1.1rem',
-                    fontWeight: 700,
+                    fontWeight: 600,
                     color: 'var(--text-primary)',
-                    marginBottom: '0.25rem'
+                    marginBottom: '0.25rem',
+                    letterSpacing: '-0.01em'
                   }}>
                     {company.name}
                   </div>
                   <div style={{
-                    fontSize: '0.75rem',
+                    fontSize: '0.7rem',
                     color: 'var(--text-muted)',
                     textTransform: 'uppercase',
-                    letterSpacing: '0.1em'
+                    letterSpacing: '0.08em',
+                    fontWeight: 500
                   }}>
                     {company.subtitle}
                   </div>
@@ -452,9 +407,9 @@ export default function Testimonials() {
             ))}
           </div>
 
-          {/* Certifications */}
+          {/* Certifications - Text Only */}
           <div style={{ marginTop: '3rem' }}>
-            <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+            <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
               <span style={{
                 display: 'inline-block',
                 padding: '0.4rem 1rem',
@@ -473,48 +428,42 @@ export default function Testimonials() {
             <div style={{
               display: 'flex',
               justifyContent: 'center',
-              gap: '2rem',
+              gap: '1.5rem',
               flexWrap: 'wrap',
-              alignItems: 'center'
+              alignItems: 'center',
+              maxWidth: '50rem',
+              margin: '0 auto'
             }}>
               {[
-                '/images/logos/logos_9c2ab2ab5299.webp',
-                '/images/logos/logos_318954208de9.webp',
-                '/images/logos/logos_19f509e88bf8.webp',
-                '/images/certifications/certifications_475e7fc5698a.webp',
-                '/images/certifications/certifications_eb1ad026fc5a.webp',
-              ].map((logo, index) => (
+                'Microsoft Partner',
+                'ISO 27001',
+                'ISO 9001',
+                'Fortinet Partner',
+                'Veeam Partner'
+              ].map((cert, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
+                  transition={{ delay: index * 0.08 }}
                   style={{
-                    width: '5rem',
-                    height: '5rem',
-                    padding: '0.75rem',
-                    borderRadius: '1rem',
-                    background: 'var(--bg-secondary)',
+                    padding: '0.75rem 1.5rem',
+                    borderRadius: '0.5rem',
                     border: '1px solid var(--border-color)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
+                    background: 'transparent',
+                    fontSize: '0.85rem',
+                    fontWeight: 500,
+                    color: 'var(--text-secondary)',
+                    letterSpacing: '0.02em',
+                    transition: 'all 0.3s ease'
+                  }}
+                  whileHover={{
+                    borderColor: '#22d3ee',
+                    color: '#22d3ee'
                   }}
                 >
-                  <img 
-                    src={logo}
-                    alt="Certificación"
-                    style={{
-                      maxWidth: '100%',
-                      maxHeight: '100%',
-                      objectFit: 'contain',
-                      opacity: 0.85
-                    }}
-                    onError={(e) => {
-                      e.target.parentElement.style.display = 'none';
-                    }}
-                  />
+                  {cert}
                 </motion.div>
               ))}
             </div>
@@ -527,11 +476,8 @@ export default function Testimonials() {
             100% { transform: translateX(-50%); }
           }
           .client-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(6, 182, 212, 0.5) !important;
-          }
-          .client-card:hover .card-glow {
-            opacity: 1 !important;
+            border-color: rgba(34, 211, 238, 0.4);
+            transform: translateY(-2px);
           }
         `}</style>
       </div>
