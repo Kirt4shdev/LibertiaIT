@@ -29,7 +29,7 @@ export default function Problems() {
       <div style={{ 
         position: 'relative', 
         zIndex: 10, 
-        maxWidth: '80rem', 
+        maxWidth: '90rem', 
         margin: '0 auto', 
         padding: '0 1.5rem' 
       }}>
@@ -76,11 +76,14 @@ export default function Problems() {
         </motion.div>
 
         {/* Problems Grid */}
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
-          gap: '1.5rem' 
-        }}>
+        <div 
+          className="problems-grid"
+          style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(3, 1fr)', 
+            gap: '1.5rem' 
+          }}
+        >
           {siteContent.problems.map((problem, index) => {
             const Icon = iconMap[problem.icon];
             return (
@@ -172,6 +175,22 @@ export default function Problems() {
           </motion.a>
         </motion.div>
       </div>
+
+      <style>{`
+        .problems-grid {
+          grid-template-columns: repeat(3, 1fr) !important;
+        }
+        @media (max-width: 1024px) {
+          .problems-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+        }
+        @media (max-width: 640px) {
+          .problems-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

@@ -80,7 +80,7 @@ export default function BlogPage() {
             <div style={{ 
               position: 'relative', 
               zIndex: 10, 
-              maxWidth: '80rem', 
+              maxWidth: '90rem', 
               margin: '0 auto', 
               padding: '0 1.5rem' 
             }}>
@@ -230,7 +230,7 @@ export default function BlogPage() {
               overflow: 'hidden' 
             }}>
               <div style={{ 
-                maxWidth: '80rem', 
+                maxWidth: '90rem', 
                 margin: '0 auto', 
                 padding: '0 1.5rem' 
               }}>
@@ -371,7 +371,7 @@ export default function BlogPage() {
             overflow: 'hidden' 
           }}>
             <div style={{ 
-              maxWidth: '80rem', 
+              maxWidth: '90rem', 
               margin: '0 auto', 
               padding: '0 1.5rem' 
             }}>

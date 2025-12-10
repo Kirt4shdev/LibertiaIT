@@ -34,7 +34,7 @@ export default function Contact() {
       <div style={{ 
         position: 'relative', 
         zIndex: 10, 
-        maxWidth: '80rem', 
+        maxWidth: '90rem', 
         margin: '0 auto', 
         padding: '0 1.5rem' 
       }}>

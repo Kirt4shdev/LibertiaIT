@@ -48,7 +48,7 @@ export default function Reasons() {
       <div style={{ 
         position: 'relative', 
         zIndex: 10, 
-        maxWidth: '80rem', 
+        maxWidth: '90rem', 
         margin: '0 auto', 
         padding: '0 1.5rem' 
       }}>
@@ -94,12 +94,15 @@ export default function Reasons() {
         </motion.div>
 
         {/* Reasons Grid */}
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
-          gap: '1.5rem',
-          marginBottom: '5rem'
-        }}>
+        <div 
+          className="reasons-grid"
+          style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(3, 1fr)', 
+            gap: '1.5rem',
+            marginBottom: '5rem'
+          }}
+        >
           {siteContent.reasons.map((reason, index) => {
             const Icon = iconMap[reason.icon];
             return (
@@ -242,6 +245,22 @@ export default function Reasons() {
           </div>
         </motion.div>
       </div>
+
+      <style>{`
+        .reasons-grid {
+          grid-template-columns: repeat(3, 1fr) !important;
+        }
+        @media (max-width: 1024px) {
+          .reasons-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+        }
+        @media (max-width: 640px) {
+          .reasons-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

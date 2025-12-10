@@ -26,7 +26,7 @@ export default function Footer() {
       }} />
 
       <div style={{ 
-        maxWidth: '80rem', 
+        maxWidth: '90rem', 
         margin: '0 auto', 
         padding: '0 1.5rem' 
       }}>

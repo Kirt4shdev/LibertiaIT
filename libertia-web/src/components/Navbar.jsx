@@ -90,7 +90,7 @@ export default function Navbar() {
         }}
       >
         <div style={{
-          maxWidth: '80rem',
+          maxWidth: '90rem',
           margin: '0 auto',
           padding: '0 1.25rem'
         }}>

@@ -29,7 +29,7 @@ export default function AboutUs() {
       <div style={{ 
         position: 'relative', 
         zIndex: 10, 
-        maxWidth: '80rem', 
+        maxWidth: '90rem', 
         margin: '0 auto', 
         padding: '0 1.5rem' 
       }}>
@@ -315,11 +315,14 @@ export default function AboutUs() {
             comprometido y siempre un paso por delante.
           </motion.p>
 
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', 
-            gap: '1.5rem'
-          }}>
+          <div 
+            className="team-grid"
+            style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(5, 1fr)', 
+              gap: '1.5rem'
+            }}
+          >
             {aboutUs.team.map((member, index) => (
               <motion.div
                 key={index}
@@ -445,6 +448,32 @@ export default function AboutUs() {
           </div>
         </motion.div>
       </div>
+
+      <style>{`
+        .team-grid {
+          grid-template-columns: repeat(5, 1fr) !important;
+        }
+        @media (max-width: 1200px) {
+          .team-grid {
+            grid-template-columns: repeat(4, 1fr) !important;
+          }
+        }
+        @media (max-width: 1024px) {
+          .team-grid {
+            grid-template-columns: repeat(3, 1fr) !important;
+          }
+        }
+        @media (max-width: 768px) {
+          .team-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .team-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }
